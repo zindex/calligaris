@@ -1,0 +1,84 @@
+/* ==== [ Profile ] ==== */
+.profile {
+	&:extend(.clr all);
+	margin: 0 200px;
+
+	@media @screen1280 {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	&__left {
+		float: left;
+		width: 194px;
+		padding-top: 5px;
+		margin-right: -194px;
+	}
+	&__right-i {
+		float: left;
+		width: 100%;
+	}
+	&__right {
+		margin-left: 217px;
+
+		//width: 882px;
+	}
+
+	// mods
+	&_customers {
+		margin: 0 220px;
+
+		@media @screen1280 {
+			margin: 0 80px;
+		}
+	}
+}
+
+/* ==== [ profile-menu ] ==== */
+.profile-menu {
+
+	&__item {
+		font-family: @comfortaa;
+		position: relative;
+		display: block;
+		padding: 12px 5px;
+		color: @gray;
+		border-bottom: 1px solid #c9c9c9;
+		background: @white;
+		&:extend(.standardTransition);
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 100%;
+			margin-top: -5px;
+			height: 0;
+			width: 0;
+			border: 5px solid transparent;
+		}
+
+		&:hover {
+			color: @red;
+			background: #f3f3f3;
+
+			&:after {
+				border-left-color: #f3f3f3;
+			}
+		}
+
+		&.is-active,
+		&.is-active:hover {
+			color: @black;
+			background: #e2e2e2;
+
+			&:after {
+				border-left-color: #e2e2e2;
+			}
+		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+}

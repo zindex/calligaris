@@ -1,0 +1,1 @@
+All images are and have to be double sized for retina devices support.

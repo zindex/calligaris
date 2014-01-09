@@ -1,0 +1,84 @@
+/* ==== [ gallery ] ==== */
+.gallery {
+	font-size: 14px;
+	font-family: @centuryGothicBold;
+	position: relative;
+
+	.clr();
+
+	&__inner {
+		min-height: 164px;
+		margin: 0 50px;
+	}
+
+	.prod {
+		text-transform: none;
+		float: left;
+		margin: 0 20px;
+		background:@white;
+	}
+
+	&__prev,
+	&__next {
+		position: absolute;
+		top: 40px;
+		left: 0;
+		height: 50px;
+		width: 50px;
+		//margin: -25px 0 0;
+		background: @gray;
+
+		&:extend(.standardTransition);
+
+		i {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -10px 0 0 -8px;
+			.s(@arrow-left);
+		}
+
+		&:hover {
+			background: @linkColorHover;
+		}
+
+		&.is-disabled,
+		&.is-disabled:hover {
+			background-color: @disabledColor;
+		}
+	}
+
+	&__prev {}
+	&__next {
+		left: auto;
+		right: 0;
+
+		i {
+			.s(@arrow-right);
+			margin-left: -4px;
+		}
+	}
+
+}
+
+/* ==== [ popup-gallery ] ==== */
+.popup-gallery {
+	height: 100%;
+
+	&__inner,
+	> .caroufredsel_wrapper {
+		height: 100% !important;
+	}
+}
+
+/* ==== [ Single gallery (text block) ] ==== */
+.single-gallery {
+	position: relative;
+	height: 520px;
+	margin: 26px 0;
+	border: 1px solid #d2d2d2;
+
+	&__inner {
+		height: 520px !important;
+	}
+}

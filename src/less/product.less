@@ -1,0 +1,289 @@
+/* ==== [ Product ] ==== */
+.prod {
+	font-size: 13px;
+	font-family: 'Century Gothic Bold', sans-serif;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 20px;
+	color: @black;
+
+	&:extend(.standardTransition);
+
+	&__img {
+		display: block;
+		min-height: 125px;
+
+		img { display: block;}
+	}
+	&__name {
+		line-height: 15px;
+		display: block;
+		margin-bottom: 9px;
+	}
+	&__price {
+		display: block;
+
+		.ico_badge-new {
+			margin: 0 0 0 10px;
+		}
+
+		.ico_badge-sale {
+			margin: 0 0 0 10px;
+		}
+	}
+
+	&__flipside {
+		display: block;
+		font-size: 12px;
+		line-height: 16px;
+		padding: 10px 15px;
+		color: @white;
+		background: @red;
+
+		.btn {
+			width:140px;
+			text-align:center;
+			padding:3px 5px 4px;
+		}
+
+		.btn { font-size: 12px;}
+	}
+		&__flipside-txt {
+			font-family: @sansFontFamily;
+			display: block;
+			margin-bottom: 5px;
+		}
+
+	&:hover {
+
+		.prod__flipside {
+			display: block;
+		}
+	}
+}
+
+.prod-i {
+	padding-bottom: 13px;
+	padding-top: 13px;
+	border-top: 1px solid #c9c9c9;
+
+	.prod {
+		display: block;
+		width: auto;
+		margin: 0;
+		overflow: hidden;
+	}
+
+	&:first-child {
+		border:0;
+	}
+}
+
+/* ==== [ Product list ] ==== */
+.prod-list-i {
+	min-height: 540px !important;
+	padding: 0 0 0 100px;
+
+	.path { margin-left: -50px;}
+
+	@media @screen1280 {
+		padding-left: 0;
+		padding-right: 0;
+
+		.path { margin-left: 0;}
+	}
+}
+.prod-list {
+	@mihHeight:  470px !important;
+
+	position: relative;
+	overflow: hidden;
+	min-width: @minWidth;
+	min-height: @mihHeight;
+
+	.prod {
+		width: 130px;
+		padding: 10px;
+		margin: 0 38px 17px 0;
+//		margin: 0 38px 47px 0;
+		text-align: left;
+		border: 1px solid @white;
+
+		&:hover {
+			border-color: #c9c9c9;
+		}
+	}
+
+	&__inner {
+		position: relative;
+
+		&:extend(.longTransition);
+	}
+
+	&__field {
+//		min-height: 250px;
+		min-height: @mihHeight !important;
+	}
+	
+	// mods
+	&_txt {
+		min-width: 0;
+		padding-top: 16px;
+		margin-bottom: 11px;
+		border-top: 1px solid #d2d2d2;
+
+		.prod {
+			margin-right: 32px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+/* ==== [ Single product page ] ==== */
+.product {
+	position: relative;
+	padding: 0 0 8px;
+
+	&__head {
+		font-size: 14px;
+		line-height:19px;
+		font-family:Arail, Helvetica, sans-serif;
+		margin-bottom: 16px;
+	}
+
+	&__category {
+		font-size: 18px;
+//		font-family: @centuryGothicBold;
+		margin-bottom: 1px;
+	}
+	&__designer {
+//		font-family: @centuryGothic;
+		margin-bottom: 2px;
+	}
+	&__info {
+		font-weight:bold;
+//		font-family: @centuryGothicBold;
+	}
+	&__desc {
+		font-size: 14px;
+		line-height: 1.6;
+		margin-bottom: 20px;
+		padding: 0 15% 0 0;
+
+		a {
+			text-decoration: underline;
+			color: @red;
+		}
+	}
+
+	&__likes {
+//		position: absolute;
+//		top: 0;
+//		right: 0;
+		float: right;
+		margin: 2px 0 0;
+	}
+
+	&__params {}
+	&__params-item {
+		font-size: 14px;
+		font-family: Helvetica, @sansFontFamily;
+		font-weight: bold;
+		position: relative;
+		margin-right: 17px;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 5px;
+			left: 100%;
+			margin: 0 0 0 7px;
+			.s(@red-x);
+		}
+
+		&:last-child:after { display: none;}
+	}
+}
+
+/* ==== [ Product gallery with zoom ] ==== */
+.prod-gallery {
+	position: relative;
+	margin: 42px -6px 0 0;
+
+	&__main {
+		position: relative;
+		z-index: 2;
+		margin-right: 65px;
+		padding: 0 0 0 59px;
+//		text-align: center;
+
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	&__thumbs {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		right: 0;
+		width: 65px;
+	}
+
+	&__item {
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 10px;
+		outline: 1px solid #c5c3c3;
+
+		img {
+			max-height: 56px;
+			max-width: 56px;
+			display:block;
+			vertical-align:top;
+		}
+
+		&.is-active {
+			outline: 2px solid @red;
+
+			img {
+
+			}
+		}
+	}
+
+	&__zoom {
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 162px;
+		height: 37px;
+		width: 37px;
+		background: @white;
+		border: 1px solid @black;
+		&:extend(.standardTransition);
+
+		i {
+			.s(@zoom);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -@zoom-height/2 0 0 -@zoom-width/2;
+		}
+
+		&.is-active,
+		&:hover {
+			background: @red;
+			border-color:@red;
+
+			i {
+				.s(@zoom-h);
+			}
+		}
+	}
+
+	&__row {
+		position: relative;
+	}
+}

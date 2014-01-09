@@ -1,0 +1,117 @@
+// -------------------------
+// reset
+
+body,div,dl,dt,dd,ul,ol,li,form,table,tr,td,
+h1,h2,h3,h4,h5,h6,pre,p,span,b,i,
+input,textarea, fieldset {margin: 0; padding: 0;}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: @headingsFontFamily;
+	font-weight: @headingsFontWeight;
+	color: @textColor;
+}
+
+ul {list-style-type: none;}
+img, fieldset {border: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+input, textarea, select, label { font-size: 1em; font-family: inherit;}
+input[type="submit"] { cursor: pointer;}
+
+a img,fieldset{
+	border: none;
+}
+
+// END reset
+// -------------------------
+
+/* ==== [ font preset ] ==== */
+@font-face { .font-face('Century Gothic', '../fonts/gothic'); }
+@font-face { .font-face('Century Gothic Bold', '../fonts/gothicb'); }
+@font-face { .font-face('Lubalin', '../fonts/lubgrhn'); }
+@font-face { .font-face('rbl', '../fonts/rouble-webfont'); }
+
+/* ==== [ Basic page styles ] ==== */
+html,body {
+	height: 100%;}
+body {
+	font-family: @sansFontFamily;
+	font-size: @baseFontSize;
+	min-width: @minWidth+30px;
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+	color: @linkColor;
+	.transition(color .3 ease);
+}
+.no-touch a:hover { color: @linkColorHover;}
+
+/* ===== [ link-preset ] ===== */
+
+.link {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+
+	&__inner {
+		line-height: 1.2;
+		text-decoration: none;
+		border-bottom: 1px solid;
+	}
+}
+a.link:hover { }
+
+.link_pseudo {
+
+	.link__inner { border-bottom-style: dotted;}
+}
+
+// -------------------------
+// Global blocks
+
+.rbl {
+	font-family: 'rbl' !important;
+	font-style: inherit;
+}
+
+.g-red { color: @red !important;}
+.g-green { color: @green !important;}
+.g-gray { color: @gray !important;}
+
+// end Global blocks
+// -------------------------
+
+// common styles, these could be attached to any block with ".wyswyg;"
+.wysiwyg {
+	display: block;
+	background: red;
+
+	 p{
+		 margin-bottom:  1em;
+	 }
+	 ul,ol{
+		 margin:  1em 2em;
+		 list-style:  disc;
+	 }
+	 ol{
+		 list-style:  decimal;
+	 }
+	 blockquote{
+		 margin:  1em 2em;
+	 }
+	 table{
+		 border-spacing:  0;
+		 border-collapse:  collapse;
+		 width:  100%;
+		 td{
+			 border:  1px solid #ccc;
+			 padding:  5px;
+		 }
+	 }
+
+	&__ello {
+		color: red !important;
+	}
+ }

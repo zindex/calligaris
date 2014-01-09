@@ -1,0 +1,65 @@
+/*---------------------------------------------------------------------------
+	[Buttons]
+---------------------------------------------------------------------------*/
+.btn {
+	font-size: 14px;
+	font-family: @centuryGothicBold;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	padding: 3px 12px 4px;
+
+	.no-touch &:hover { color: @white; } // or @linkColorHover
+	&:active { padding: 4px 11px 3px 13px; }
+
+	&.is-disabled {
+		&,
+		&:hover,
+		&:active{
+			padding: 3px 12px 4px;
+			color: @white;
+			background: @disabledColor;
+		}
+	}
+}
+
+.btn_black {
+	color: @white;
+	background: @black;
+
+	.no-touch &:hover {
+		background: @red;
+	}
+}
+
+.btn_gray {
+	&:extend(.btn_black all);
+	background: @gray;
+}
+
+.btn_white {
+	color: @black;
+	background: @white;
+
+	.no-touch &:hover { color: @black;}
+}
+
+// big sized
+
+.btn_big {
+	font-size: 17px;
+	padding: 14px 19px 15px;
+
+	.no-touch &:hover { }
+	&:active { padding: 15px 18px 14px 20px; }
+
+	&.is-disabled {
+		&,
+		&:hover,
+		&:active{
+			padding: 15px 18px 14px 20px;
+			color: @white;
+			background: @disabledColor;
+		}
+	}
+}

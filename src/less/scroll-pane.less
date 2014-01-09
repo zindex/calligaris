@@ -1,0 +1,149 @@
+.scroll-pane {
+	margin: 0 7px 0 0;
+	overflow: hidden;
+	outline: none;
+	padding: 0 7px 0 0;
+}
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+	margin-top: -1px;
+}
+
+.jspPane
+{
+	position: absolute;
+	padding: 0 0 15px !important;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 5px;
+	width: 8px;
+	height: 100%;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 7px;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+	/*.jspCap
+	{
+		position: absolute;
+		left: 0;
+		display: block;
+		z-index: 1;
+	}*/
+
+.jspCapTop { height: 5px; width: 10px; top: 0; /*background: url("../img/jsCapTop.png") no-repeat;*/}
+.jspCapBottom { height: 5px; width: 10px; bottom: 10px;  /*background: url("../img/jsCapBottom.png") no-repeat;*/}
+
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	position: relative;
+	width: 1px;
+	z-index: 2;
+	padding-bottom: 10px;
+	background: #c9c9c9;
+}
+
+.jspDrag
+{
+	position: relative;
+	z-index: 2;
+	top: 0;
+	left: -4px;
+	margin-top: 22px;
+	cursor: pointer;
+	height:36px !important;
+	.s(@scrollpane-drag);
+
+	&:hover {
+		.s(@scrollpane-drag_red);
+	}
+}
+
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 7px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 6px;
+	float: left;
+	height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+	/* Yuk! CSS Hack for IE6 3 pixel bug : ( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+
+	/* ==== [ cover block ] ==== */
+
+
+.jspCap
+{
+	display: block;
+}
+
+.jspVerticalBar .jspCapTop {height: 6px;}
+.jspVerticalBar .jspCapBottom {height: 16px;}

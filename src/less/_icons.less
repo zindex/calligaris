@@ -1,0 +1,123 @@
+/*---------------------------------------------------------------------------
+	[Icons]
+---------------------------------------------------------------------------*/
+@import "_sprites";
+
+// main sprite mixin
+.sprite(@sprite) {
+	@height:  ~`"@{sprite}".split(', ')[5]`;
+	@width:  ~`"@{sprite}".split(', ')[4]`;
+	@background-image:  ~`"@{sprite}".split(', ')[8].slice(this.length, -1)`;
+	@offset-x:  ~`"@{sprite}".split(', ')[2]`;
+	@offset-y:  ~`"@{sprite}".split(', ')[3]`;
+	height: @height;
+	width: @width;
+	background: url(@background-image) @offset-x @offset-y no-repeat;
+}
+// short version
+.s(@sprite){
+	.sprite(@sprite);
+}
+
+.ico {
+	display: inline-block;
+	vertical-align: top;
+	/*-webkit-transform: translateZ(0);*/
+}
+
+.ico_search { .s(@search);
+	top: 50%;
+	margin-top: -@search-height/2;
+}
+
+.ico_search-white { .s(@search_white);}
+.ico_search-red { .s(@search_red);}
+.ico_lock { .s(@lock);}
+.ico_lock-red { .s(@lock-red);}
+.ico_cart { .s(@cart);}
+.ico_basket { .s(@basket);}
+.ico_badge-new { .s(@badge-new);}
+.ico_badge-new_big { .s(@badge-new_big);}
+.ico_badge-new_large { .s(@badge-new_large);}
+.ico_badge-sale { .s(@badge-sale);}
+.ico_play { .s(@play);}
+.ico_clock { .s(@clock);}
+.ico_placemark { .s(@placemark);}
+.ico_phone { .s(@phone);}
+.ico_email { .s(@email);}
+.ico_megaphone { .s(@megaphone);}
+.ico_check { .s(@check);}
+.ico_ok { .s(@check-big);}
+
+.ico_checkbox { .s(@checkbox);}
+.ico_checkbox-active { .s(@checkbox-active);}
+
+.ico_truck{ .s(@track);}
+.ico_calligaris { .s(@calligaris-logo);}
+
+.ico_red-x { .s(@red-x);}
+.ico_equal { .s(@equal);}
+
+// social icons
+.ico_social-fb { .s(@social-fb);}
+.ico_social-gp { .s(@social-gp);}
+.ico_social-ml { .s(@social-ml);}
+.ico_social-od { .s(@social-od);}
+.ico_social-tw { .s(@social-tw);}
+.ico_social-vk { .s(@social-vk);}
+
+// arrows
+.ico_sort-arrow-top {
+	.s(@sort-arrow-top);
+
+	&.is-disabled { .s(@sort-arrow-top_disabled);}
+}
+.ico_sort-arrow-bottom {
+	.s(@sort-arrow-bottom);
+
+	&.is-disabled { .s(@sort-arrow-bottom_disabled);}
+}
+.ico_arrow-left-black { .s(@arrow-left_black);}
+.ico_arrow-right-black { .s(@arrow-right_black);}
+
+.ico_plus { .s(@plus);}
+.ico_new-user { .s(@new-user);}
+.ico_map-link { .s(@map-link);}
+.ico_edit { .s(@edit);}
+
+// cart action icons
+.ico_eye {
+	margin-top: 2px;
+	.s(@eye);
+
+	&:hover { .s(@eye_red);}
+	&.is-disabled,
+	&.is-disabled:hover { .s(@eye_gray);}
+}
+.ico_print {
+	margin-top: 1px;
+	.s(@print);
+
+	&:hover { .s(@print_red);}
+	&.is-disabled,
+	&.is-disabled:hover { .s(@print_gray);}
+}
+.ico_delete {
+	.s(@delete);
+
+	&:hover { .s(@delete_red);}
+	&.is-disabled,
+	&.is-disabled:hover { .s(@delete_gray);}
+}
+
+.ico_docs {.s(@docs);}
+
+
+//@media @screen1600 {
+@media @retina {
+	.ico {
+		background-image:  url("../img/icons-2x.png") !important;
+		background-size: @blank-total-width @blank-total-height !important;
+	}
+}
+

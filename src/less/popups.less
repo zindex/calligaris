@@ -1,0 +1,58 @@
+.popup {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	&__data {
+		position: absolute;
+		z-index: 2;
+		top: 100px;
+		left: 50%;
+		overflow: hidden;
+		padding: 20px;
+		background: #fff;
+		border: 1px solid #ccc;
+	}
+	    .close {
+	        position: absolute;
+			z-index: 2;
+			top: 0;
+			right: 0;
+	    }
+
+    &__bg {
+    	position: fixed;
+    	z-index: 1;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	background: #000;
+    	.opacity(.8);
+    }
+
+	&_gallery {
+		.popup__data {
+			position: absolute;
+			top: 59px;
+			right: 45px;
+			left: 45px;
+			bottom: 40px;
+			min-height: 500px;
+			text-align: center;
+
+			img {
+				max-height: 100%;
+			}
+		}
+
+		.gallery__prev,
+		.gallery__next {
+			top: 50%;
+			margin-top: -25px;
+		}
+	}
+}
